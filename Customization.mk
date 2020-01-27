@@ -37,3 +37,5 @@ BOARD_KERNEL_SEPARATED_DTBO := false
 else
 BOARD_KERNEL_SEPARATED_DTBO := true
 endif
+
+include $(CUST_PATH)/lineageOS/Customization.mk
