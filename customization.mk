@@ -145,13 +145,14 @@ PRODUCT_COPY_FILES += \
 # Create folder to bindmount libs for the IMS VideoTelephony
 PRODUCT_COPY_FILES += \
     $(CUST_PATH)/ims/emptyfile:$(TARGET_COPY_OUT_PRODUCT)/priv-app/ims/lib/arm64/bind_mount_lib64_here
-
+    
+# DO NOT ENABLE THIS - IT WILL CREATE A MAJOR SECURITY HOLE (adb is always open, running as root, no auth needed)
 # USB debugging at boot
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp,adb \
-    ro.adb.secure=0 \
-    ro.secure=0 \
-    ro.debuggable=1
+#PRODUCT_PROPERTY_OVERRIDES += \
+#    persist.sys.usb.config=mtp,adb \
+#    ro.adb.secure=0 \
+#    ro.secure=0 \
+#    ro.debuggable=1
 
 # Recovery UI hack for Ganges video mode panels
 ifneq ($(filter ganges, $(SOMC_PLATFORM)),)
